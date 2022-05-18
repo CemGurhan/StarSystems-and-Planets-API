@@ -1,4 +1,4 @@
-package com.example.StarSystemsandPlanetsAPI.controllers;
+package com.example.StarSystemsandPlanetsAPI.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 

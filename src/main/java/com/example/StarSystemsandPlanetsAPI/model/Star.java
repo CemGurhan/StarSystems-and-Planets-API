@@ -1,9 +1,10 @@
-package com.example.StarSystemsandPlanetsAPI.models;
+package com.example.StarSystemsandPlanetsAPI.model;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name="stars")
 public class Star {
 
     @Id

@@ -1,9 +1,10 @@
-package com.example.StarSystemsandPlanetsAPI.models;
+package com.example.StarSystemsandPlanetsAPI.model;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name="planets")
 public class Planet {
 
     @Id
@@ -14,7 +15,7 @@ public class Planet {
 
     private String type;
 
-    @ManyToMany(mappedBy = "stars") // bidirectional relationship mapped by stars
+    @ManyToMany(mappedBy = "planets") // bidirectional relationship mapped by stars
     private List<Star> stars;
 
     public Planet(){}

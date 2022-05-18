@@ -4,7 +4,7 @@ INSERT INTO stars (id,constellation,name,solar_mass,type) VALUES (3,NULL,'Sol',1
 INSERT INTO stars (id,constellation,name,solar_mass,type) VALUES (4,'Pegasus','HD 209458',1.148,'yellow dwarf');
 INSERT INTO stars (id,constellation,name,solar_mass,type) VALUES (5,'Cygnus','KOI-5 A',1.13,'unknown');
 INSERT INTO stars (id,constellation,name,solar_mass,type) VALUES (6,'Cygnus','KOI-5 B',1.09,'unknown');
-INSERT INTO stars (id,constellation,name,solar_mass,type) VALUES (7,'Cygnus','KOI-5 C',NULL,'unknown');
+INSERT INTO stars (id,constellation,name,solar_mass,type) VALUES (7,'Cygnus','KOI-5 C',1,'unknown');
 
 INSERT INTO planets (id,name,type) VALUES (1,'Kepler-16b','Gas Giant');
 INSERT INTO planets (id,name,type) VALUES (2,'Mercury','Terrestrial');

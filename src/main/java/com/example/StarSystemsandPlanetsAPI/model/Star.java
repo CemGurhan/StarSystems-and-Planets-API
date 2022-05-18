@@ -13,7 +13,7 @@ public class Star {
     private String name;
     private String type;
     private String constellation;
-    private int solarMass;
+    private double solarMass;
 
     @ManyToMany(cascade = CascadeType.REMOVE)
     @JoinTable(
@@ -25,7 +25,7 @@ public class Star {
 
     public Star(){}
 
-    public Star(Long id, String name, String type, String constellation, int solarMass) {
+    public Star(Long id, String name, String type, String constellation, double solarMass) {
         this.id = id;
         this.name = name;
         this.type = type;
@@ -65,11 +65,11 @@ public class Star {
         this.constellation = constellation;
     }
 
-    public int getSolarMass() {
+    public double getSolarMass() {
         return solarMass;
     }
 
-    public void setSolarMass(int solarMass) {
+    public void setSolarMass(double solarMass) {
         this.solarMass = solarMass;
     }
 

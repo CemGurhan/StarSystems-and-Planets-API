@@ -14,7 +14,12 @@ public class Star {
     private String constellation;
     private int solarMass;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.REMOVE)
+    @JoinTable(
+            name="System",
+            joinColumns = @JoinColumn(name = "stars_id"),
+            inverseJoinColumns = @JoinColumn(name="planets_id") // get id from inverse entity in relationship (planets)
+    )
     private List<Planet> planets;
 
     public Star(){}

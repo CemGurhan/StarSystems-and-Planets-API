@@ -14,7 +14,7 @@ public class Planet {
 
     private String type;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "stars") // bidirectional relationship mapped by stars
     private List<Star> stars;
 
     public Planet(){}

@@ -1,5 +1,7 @@
 package com.example.StarSystemsandPlanetsAPI.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -16,6 +18,7 @@ public class Star {
     private double solarMass;
 
     @ManyToMany(cascade = CascadeType.REMOVE)
+    @JsonIgnoreProperties(value = {"stars"})
     @JoinTable(
             name="System",
             joinColumns = @JoinColumn(name = "stars_id"),

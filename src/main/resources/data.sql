@@ -1,1 +1,34 @@
-INSERT INTO stars (constellation,name,solar_mass,type) VALUES ('Cygnus','Kepler-16A',0.6897,'binary');
+INSERT INTO stars (id,constellation,name,solar_mass,type) VALUES (1,'Cygnus','Kepler-16A',0.6897,'orange dwarf');
+INSERT INTO stars (id,constellation,name,solar_mass,type) VALUES (2,'Cygnus','Kepler-16B',0.20255,'red dwarf');
+INSERT INTO stars (id,constellation,name,solar_mass,type) VALUES (3,NULL,'Sol',1,'yellow dwarf');
+INSERT INTO stars (id,constellation,name,solar_mass,type) VALUES (4,'Pegasus','HD 209458',1.148,'yellow dwarf');
+INSERT INTO stars (id,constellation,name,solar_mass,type) VALUES (5,'Cygnus','KOI-5 A',1.13,'unknown');
+INSERT INTO stars (id,constellation,name,solar_mass,type) VALUES (6,'Cygnus','KOI-5 B',1.09,'unknown');
+INSERT INTO stars (id,constellation,name,solar_mass,type) VALUES (7,'Cygnus','KOI-5 C',NULL,'unknown');
+
+INSERT INTO planets (id,name,type) VALUES (1,'Kepler-16b','Gas Giant');
+INSERT INTO planets (id,name,type) VALUES (2,'Mercury','Terrestrial');
+INSERT INTO planets (id,name,type) VALUES (3,'Venus','Terrestrial');
+INSERT INTO planets (id,name,type) VALUES (4,'Earth','Terrestrial');
+INSERT INTO planets (id,name,type) VALUES (5,'Mars','Terrestrial');
+INSERT INTO planets (id,name,type) VALUES (6,'Jupiter','Gas Giant');
+INSERT INTO planets (id,name,type) VALUES (7,'Saturn','Gas Giant');
+INSERT INTO planets (id,name,type) VALUES (8,'Uranus','Ice Giant');
+INSERT INTO planets (id,name,type) VALUES (9,'Neptune','Ice Giant');
+INSERT INTO planets (id,name,type) VALUES (10,'Osiris','Gas Giant');
+INSERT INTO planets (id,name,type) VALUES (11,'KOI - 5Ab','Unknown');
+
+INSERT INTO system  (stars_id,planets_id) VALUES (1,1);
+INSERT INTO system  (stars_id,planets_id) VALUES (2,1);
+INSERT INTO system  (stars_id,planets_id) VALUES (3,2);
+INSERT INTO system  (stars_id,planets_id) VALUES (3,3);
+INSERT INTO system  (stars_id,planets_id) VALUES (3,4);
+INSERT INTO system  (stars_id,planets_id) VALUES (3,5);
+INSERT INTO system  (stars_id,planets_id) VALUES (3,6);
+INSERT INTO system  (stars_id,planets_id) VALUES (3,7);
+INSERT INTO system  (stars_id,planets_id) VALUES (3,8);
+INSERT INTO system  (stars_id,planets_id) VALUES (3,9);
+INSERT INTO system  (stars_id,planets_id) VALUES (4,10);
+INSERT INTO system  (stars_id,planets_id) VALUES (5,11);
+INSERT INTO system  (stars_id,planets_id) VALUES (6,11);
+INSERT INTO system  (stars_id,planets_id) VALUES (7,11);

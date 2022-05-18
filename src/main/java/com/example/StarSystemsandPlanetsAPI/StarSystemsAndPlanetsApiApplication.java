@@ -9,5 +9,5 @@ public class StarSystemsAndPlanetsApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(StarSystemsAndPlanetsApiApplication.class, args);
 	}
-	
+
 }

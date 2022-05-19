@@ -15,6 +15,6 @@ public interface StarRepository extends JpaRepository<Star,Long> {
 //            "INNER JOIN planets ON planets.id=system.planets_id WHERE stars.id IN(1,2);",nativeQuery = true)
 //    public
 
-    @Query(value = "SELECT * FROM stars WHERE id = ?1")
+    @Query(value = "SELECT * FROM stars WHERE id = ?1",nativeQuery = true)
     public Star findStarByID(int id);
 }

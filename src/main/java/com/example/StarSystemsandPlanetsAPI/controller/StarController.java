@@ -3,10 +3,7 @@ package com.example.StarSystemsandPlanetsAPI.controller;
 import com.example.StarSystemsandPlanetsAPI.model.Star;
 import com.example.StarSystemsandPlanetsAPI.repository.StarRepository;
 import com.example.StarSystemsandPlanetsAPI.service.StarService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,7 +22,10 @@ public class StarController {
         return starService.findAll();
     }
 
-
+    @GetMapping(value = "/stars/{id}")
+    public Star findStarByID(@PathVariable("id") int id){
+        return starService.findStarByID(id);
+    }
 
 
 

@@ -20,6 +20,11 @@ public class StarService {
         return starRepository.findAll();
     }
 
+    public Star findStarByID(int id){
+        return starRepository.findStarByID(id);
+    }
+
+
     public Star addStar(Star star){
         return starRepository.save(star);
     }

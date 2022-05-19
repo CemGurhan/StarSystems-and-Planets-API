@@ -19,8 +19,10 @@ public class StarController {
     }
 
     @GetMapping("/stars")
-    public List<Star> findAll(){
-        return starService.findAll();
+    public ResponseEntity<List<Star>> findAll(){
+
+        List<Star> result = starService.findAll();
+        return ResponseEntity.ok().body(result);
     }
 
     @GetMapping(value = "/stars/{id}")

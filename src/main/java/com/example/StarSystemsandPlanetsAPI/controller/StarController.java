@@ -50,6 +50,17 @@ public class StarController {
         return starService.deleteStarByID(id);
     }
 
+    @PutMapping("updateStar/{id}")
+    public Star updateStar(@RequestParam String constellation,
+                           @RequestParam String name,
+                           @RequestParam int solarMass,
+                           @RequestParam String type,
+                           @PathVariable("id") int id){
+
+        return starService.updateStarByID(id,constellation,name,solarMass,type);
+
+    }
+
 
 
 

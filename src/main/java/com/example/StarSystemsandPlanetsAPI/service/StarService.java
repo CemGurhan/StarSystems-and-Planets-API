@@ -50,4 +50,18 @@ public class StarService {
         return response;
     }
 
+    public Star updateStarByID(int id,String constellation,String name,int solarMass,String type){
+        Star starToUpdate = starRepository.findStarByID(id);
+
+        starToUpdate.setConstellation(constellation);
+        starToUpdate.setName(name);
+        starToUpdate.setSolarMass(solarMass);
+        starToUpdate.setType(type);
+
+        starRepository.save(starToUpdate);
+
+        return  starToUpdate;
+
+    }
+
 }

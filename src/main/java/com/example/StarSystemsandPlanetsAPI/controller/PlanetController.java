@@ -42,8 +42,8 @@ public class PlanetController {
     }
 
     @PutMapping("updatePlanet/{id}")
-    public Planet updatePlanetByID(@RequestParam String name,
-                                   @RequestParam String type,
+    public Planet updatePlanetByID(@RequestParam(required = false) String name,
+                                   @RequestParam(required = false) String type,
                                    @PathVariable("id") int id){
 
         return planetService.updatePlanetById(id,name,type);

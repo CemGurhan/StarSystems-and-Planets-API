@@ -51,10 +51,10 @@ public class StarController {
     }
 
     @PutMapping("updateStar/{id}")
-    public Star updateStar(@RequestParam String constellation,
-                           @RequestParam String name,
-                           @RequestParam int solarMass,
-                           @RequestParam String type,
+    public Star updateStar(@RequestParam(required = false) String constellation,
+                           @RequestParam(required = false) String name,
+                           @RequestParam(required = false) Integer solarMass,
+                           @RequestParam(required = false) String type,
                            @PathVariable("id") int id){
 
         return starService.updateStarByID(id,constellation,name,solarMass,type);

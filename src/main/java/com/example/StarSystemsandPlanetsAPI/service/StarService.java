@@ -20,4 +20,8 @@ public class StarService {
         return starRepository.findAll();
     }
 
+    public Star addStar(Star star){
+        return starRepository.save(star);
+    }
+
 }

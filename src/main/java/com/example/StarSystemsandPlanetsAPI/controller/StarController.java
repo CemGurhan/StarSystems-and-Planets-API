@@ -4,6 +4,8 @@ import com.example.StarSystemsandPlanetsAPI.model.Star;
 import com.example.StarSystemsandPlanetsAPI.repository.StarRepository;
 import com.example.StarSystemsandPlanetsAPI.service.StarService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -21,6 +23,16 @@ public class StarController {
     @GetMapping("/stars")
     public List<Star> findAll(){
         return starService.findAll();
+    }
+
+
+
+
+
+
+    @PostMapping("/addStar")
+    public Star addStar(@RequestBody Star star){
+        return starService.addStar(star);
     }
 
 

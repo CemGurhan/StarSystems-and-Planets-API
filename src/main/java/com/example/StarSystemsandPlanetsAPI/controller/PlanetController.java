@@ -16,11 +16,11 @@ public class PlanetController {
         this.planetService=planetService;
     }
 
-
-
     @GetMapping("/planets")
     public List<Planet> findAll(){
         return planetService.findAll();
     };
+
+
 
 }

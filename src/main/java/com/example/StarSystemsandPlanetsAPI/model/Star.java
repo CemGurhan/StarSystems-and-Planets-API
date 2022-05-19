@@ -1,12 +1,18 @@
 package com.example.StarSystemsandPlanetsAPI.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import org.springframework.context.annotation.Role;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name="stars")
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
 public class Star {
 
     @Id
@@ -17,8 +23,8 @@ public class Star {
     private String constellation;
     private double solarMass;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JsonIgnoreProperties(value = {"stars"})
+    @ManyToMany(targetEntity = Role.class,cascade = CascadeType.ALL)
+//    @JsonIgnoreProperties(value = {"stars"})
     @JoinTable(
             name="System",
             joinColumns = @JoinColumn(name = "stars_id"),

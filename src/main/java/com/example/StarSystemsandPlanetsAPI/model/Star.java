@@ -17,7 +17,7 @@ public class Star {
     private String constellation;
     private double solarMass;
 
-    @ManyToMany(cascade = CascadeType.REMOVE)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JsonIgnoreProperties(value = {"stars"})
     @JoinTable(
             name="System",

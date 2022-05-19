@@ -28,8 +28,6 @@ public class StarController {
     }
 
 
-
-
     @PostMapping("/addStar")
     public Star addStar(@RequestBody Star star){
         return starService.addStar(star);

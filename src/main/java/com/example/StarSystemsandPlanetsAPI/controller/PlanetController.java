@@ -39,9 +39,18 @@ public class PlanetController {
 
         return planetService.deletePlanetByID(id);
 
+    }
 
+    @PutMapping("updatePlanet/{id}")
+    public Planet updatePlanetByID(@RequestParam String name,
+                                   @RequestParam String type,
+                                   @PathVariable("id") int id){
+
+        return planetService.updatePlanetById(id,name,type);
 
     }
+
+
 
     }
 

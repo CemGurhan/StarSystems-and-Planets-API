@@ -43,4 +43,15 @@ public class PlanetService {
         return response;
     }
 
+    public Planet updatePlanetById(int id, String name, String type){
+
+        Planet planetToUpdate = planetRepository.findPlanetByID(id);
+
+        planetToUpdate.setName(name);
+        planetToUpdate.setType(type);
+        planetRepository.save(planetToUpdate);
+        return planetToUpdate;
+
+    }
+
 }

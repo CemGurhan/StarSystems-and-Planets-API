@@ -54,4 +54,6 @@ class StarSystemsAndPlanetsApiApplicationTests {
 		assertEquals(testPlanet.getName(),"Venus");
 	}
 
+
+
 }

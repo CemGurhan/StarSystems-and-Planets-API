@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class StarController {
@@ -42,6 +43,11 @@ public class StarController {
     public ResponseEntity<Star> addStar(@RequestBody Star star){
         Star result = starService.addStar(star);
         return ResponseEntity.ok().body(result);
+    }
+
+    @DeleteMapping("starDelete/{id}")
+    public Map<String,Boolean> deleteStarByID(@PathVariable("id") int id){
+        return starService.deleteStarByID(id);
     }
 
 

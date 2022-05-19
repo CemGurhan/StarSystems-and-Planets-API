@@ -6,7 +6,9 @@ import com.example.StarSystemsandPlanetsAPI.repository.StarRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class StarService {
@@ -32,6 +34,20 @@ public class StarService {
     public Star addStar(Star star){
 
         return starRepository.save(star);
+    }
+
+    public Map<String,Boolean> deleteStarByID(int id){
+
+        try{
+            Star result = starRepository.findStarByID(id);
+            starRepository.delete(result);
+        }catch(IllegalArgumentException e){
+            new Exception("Planet does not exist!");
+        }
+
+        Map<String,Boolean> response = new HashMap<>();
+        response.put("deleted",Boolean.TRUE);
+        return response;
     }
 
 }

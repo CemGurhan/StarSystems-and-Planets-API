@@ -3,6 +3,7 @@ package com.example.StarSystemsandPlanetsAPI.controller;
 import com.example.StarSystemsandPlanetsAPI.model.Star;
 import com.example.StarSystemsandPlanetsAPI.repository.StarRepository;
 import com.example.StarSystemsandPlanetsAPI.service.StarService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,14 +24,16 @@ public class StarController {
     }
 
     @GetMapping(value = "/stars/{id}")
-    public Star findStarByID(@PathVariable("id") int id){
-        return starService.findStarByID(id);
+    public ResponseEntity<Star> findStarByID(@PathVariable("id") int id){
+        Star result = starService.findStarByID(id);
+        return ResponseEntity.ok().body(result);
     }
 
 
-    @PostMapping("/addStar")
-    public Star addStar(@RequestBody Star star){
-        return starService.addStar(star);
+    @PostMapping("/stars/addStar")
+    public ResponseEntity<Star> addStar(@RequestBody Star star){
+        Star result = starService.addStar(star);
+        return ResponseEntity.ok().body(result);
     }
 
 

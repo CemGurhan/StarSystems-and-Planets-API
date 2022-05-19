@@ -10,5 +10,8 @@ public interface PlanetRepository extends JpaRepository<Planet,Long> {
     @Query(value = "SELECT * FROM planets WHERE id = ?", nativeQuery = true)
     Planet findPlanetByID(int id);
 
+//    @Query(value = "DELETE FROM system WHERE planets_id = ?",nativeQuery = true)
+//    int deletePlanetByID(int id);
+
 
 }

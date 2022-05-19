@@ -2,18 +2,19 @@ package com.example.StarSystemsandPlanetsAPI.controller;
 
 import com.example.StarSystemsandPlanetsAPI.model.Planet;
 import com.example.StarSystemsandPlanetsAPI.service.PlanetService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class PlanetController {
 
     private PlanetService planetService;
+
+
 
     public PlanetController(PlanetService planetService){
         this.planetService=planetService;
@@ -33,7 +34,16 @@ public class PlanetController {
     }
 
 
+    @DeleteMapping("/planetDelete/{id}")
+    public Map<String,Boolean> deletePlanetByID(@PathVariable("id") int id){        //what if planet doesnt exist
+
+        return planetService.deletePlanetByID(id);
 
 
 
-}
+    }
+
+    }
+
+
+

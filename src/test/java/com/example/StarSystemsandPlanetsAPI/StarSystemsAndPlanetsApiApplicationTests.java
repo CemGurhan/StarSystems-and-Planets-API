@@ -48,4 +48,10 @@ class StarSystemsAndPlanetsApiApplicationTests {
 		assertEquals(testPlanets.isEmpty(),false);
 	}
 
+	@Test
+	void getPlanetByIDTest(){
+		Planet testPlanet = planetService.findPlanetByID(3);
+		assertEquals(testPlanet.getName(),"Venus");
+	}
+
 }

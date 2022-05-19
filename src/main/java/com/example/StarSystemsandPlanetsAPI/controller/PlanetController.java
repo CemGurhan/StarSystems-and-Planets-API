@@ -4,6 +4,8 @@ import com.example.StarSystemsandPlanetsAPI.model.Planet;
 import com.example.StarSystemsandPlanetsAPI.service.PlanetService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -24,7 +26,13 @@ public class PlanetController {
         return ResponseEntity.ok().body(result);
     };
 
-    
+    @GetMapping("/planets/{id}")
+    public ResponseEntity<Planet> findPlanetByID(@PathVariable("id") int id){
+        Planet result = planetService.findPlanetByID(id);
+        return ResponseEntity.ok().body(result);
+    }
+
+
 
 
 

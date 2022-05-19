@@ -20,6 +20,10 @@ public class PlanetService {
         return planetRepository.findAll();
     }
 
+    public Planet findPlanetByID(int id){
+        return planetRepository.findPlanetByID(id);
+    }
+
 
 
 }

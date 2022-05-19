@@ -1,6 +1,7 @@
 package com.example.StarSystemsandPlanetsAPI.controller;
 
 import com.example.StarSystemsandPlanetsAPI.model.Star;
+import com.example.StarSystemsandPlanetsAPI.model.StarSystemModel;
 import com.example.StarSystemsandPlanetsAPI.repository.StarRepository;
 import com.example.StarSystemsandPlanetsAPI.service.StarService;
 import org.springframework.http.ResponseEntity;
@@ -24,13 +25,18 @@ public class StarController {
         List<Star> result = starService.findAll();
         return ResponseEntity.ok().body(result);
     }
-
+    
     @GetMapping(value = "/stars/{id}")
     public ResponseEntity<Star> findStarByID(@PathVariable("id") int id){
         Star result = starService.findStarByID(id);
         return ResponseEntity.ok().body(result);
     }
 
+    @GetMapping(value = "/stars/system")
+    public ResponseEntity<Star> returnSystem(){
+        Star result = starService.returnSystem();
+        return ResponseEntity.ok().body(result);
+    }
 
     @PostMapping("/stars/addStar")
     public ResponseEntity<Star> addStar(@RequestBody Star star){

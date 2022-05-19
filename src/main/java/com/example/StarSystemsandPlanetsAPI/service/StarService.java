@@ -1,6 +1,7 @@
 package com.example.StarSystemsandPlanetsAPI.service;
 
 import com.example.StarSystemsandPlanetsAPI.model.Star;
+import com.example.StarSystemsandPlanetsAPI.model.StarSystemModel;
 import com.example.StarSystemsandPlanetsAPI.repository.StarRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,7 +26,9 @@ public class StarService {
         return starRepository.findStarByID(id);
     }
 
-    @Transactional
+    public Star returnSystem(){return starRepository.returnSystem();}
+
+
     public Star addStar(Star star){
 
         return starRepository.save(star);

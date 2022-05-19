@@ -1,5 +1,6 @@
 package com.example.StarSystemsandPlanetsAPI.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -9,6 +10,7 @@ import java.util.List;
 @Table(name="planets")
 public class Planet {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,7 +19,7 @@ public class Planet {
 
     private String type;
 
-    @ManyToMany(mappedBy = "planets") // bidirectional relationship mapped by stars
+    @ManyToMany(mappedBy = "planets") // bidirectional relationship owned by stars
     @JsonIgnoreProperties(value = {"planets"})
     private List<Star> stars;
 

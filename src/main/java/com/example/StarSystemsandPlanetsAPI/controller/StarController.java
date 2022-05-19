@@ -25,7 +25,7 @@ public class StarController {
         List<Star> result = starService.findAll();
         return ResponseEntity.ok().body(result);
     }
-    
+
     @GetMapping(value = "/stars/{id}")
     public ResponseEntity<Star> findStarByID(@PathVariable("id") int id){
         Star result = starService.findStarByID(id);
@@ -43,6 +43,8 @@ public class StarController {
         Star result = starService.addStar(star);
         return ResponseEntity.ok().body(result);
     }
+
+
 
 
 

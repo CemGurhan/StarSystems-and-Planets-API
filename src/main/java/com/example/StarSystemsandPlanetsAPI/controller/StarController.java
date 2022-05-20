@@ -39,11 +39,25 @@ public class StarController {
         return ResponseEntity.ok().body(result);
     }
 
-    @PostMapping("/stars/addStar")
-    public ResponseEntity<Star> addStar(@RequestBody Star star){
-        Star result = starService.addStar(star);
-        return ResponseEntity.ok().body(result);
+//    @PostMapping("/stars/addStar")
+//    public ResponseEntity<Star> addStar(@RequestBody Star star){
+//        Star result = starService.addStar(star);
+//        return ResponseEntity.ok().body(result);
+//    }
+
+
+    @PostMapping("/stars/addStar/{id}")
+    public String addStar(@RequestParam String constellation,
+                                        @RequestParam String name,
+                                        @RequestParam Integer solarMass,
+                                        @RequestParam String type,
+                                        @PathVariable("id") int id){
+
+       starService.addStar(id,constellation,name,solarMass, type);
+        return "added";
     }
+
+
 
     @DeleteMapping("starDelete/{id}")
     public Map<String,Boolean> deleteStarByID(@PathVariable("id") int id){

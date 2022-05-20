@@ -31,9 +31,16 @@ public class StarService {
     public Star returnSystem(){return starRepository.returnSystem();}
 
 
-    public Star addStar(Star star){
+//    public Star addStar(Star star){
+//
+//        return starRepository.save(star);
+//    }
 
-        return starRepository.save(star);
+    public String addStar(int id, String constellation, String name, Integer solarMass, String type){
+
+        starRepository.addStar(id,constellation,name,solarMass,type);
+
+        return "added";
     }
 
     public Map<String,Boolean> deleteStarByID(int id){

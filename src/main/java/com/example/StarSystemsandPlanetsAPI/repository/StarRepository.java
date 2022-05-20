@@ -19,6 +19,9 @@ public interface StarRepository extends JpaRepository<Star,Long> {
     @Query(value = "SELECT * FROM stars WHERE id = ?",nativeQuery = true)
     Star findStarByID(int id);
 
+    @Query(value = "INSERT INTO stars (id, constellation, name, solar_mass, type) VALUES (?1, ?2, ?3, ?4, ?5)",
+                   nativeQuery = true)
+    String addStar(int id, String constellation, String name, Integer solar_mass, String type);
 
 
 }

@@ -54,6 +54,13 @@ public class PlanetService {
 
     }
 
+    public Planet addPlanet(int id, String name, String type){
 
+        planetRepository.addPlanet(id,name,type);
+
+        return planetRepository.findPlanetByID(id);
+
+
+    }
 
 }

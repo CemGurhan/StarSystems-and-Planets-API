@@ -13,7 +13,7 @@ public interface PlanetRepository extends JpaRepository<Planet,Long> {
 //    @Query(value = "DELETE FROM system WHERE planets_id = ?",nativeQuery = true)
 //    int deletePlanetByID(int id);
 
-
-
+    @Query(value = "INSERT INTO planets (id,name,type) VALUES ( ?1 , ?2 , ?3 )", nativeQuery = true)
+    Planet addPlanet(int id, String name, String type);
 
 }

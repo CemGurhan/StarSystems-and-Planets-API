@@ -50,7 +50,15 @@ public class PlanetController {
 
     }
 
+    @PostMapping("addPlanet/{id}")
+    public Planet addPlanet(@RequestParam(required = false) String name,
+                            @RequestParam(required = false) String type,
+                            @PathVariable("id") int id){
 
+        planetService.addPlanet(id,name,type);
+
+        return planetService.findPlanetByID(id);
+    }
 
 
 

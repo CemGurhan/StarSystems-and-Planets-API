@@ -4,7 +4,11 @@ import com.example.StarSystemsandPlanetsAPI.model.Planet;
 import org.hibernate.mapping.Value;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
 
+import java.util.Map;
+
+@Repository
 public interface PlanetRepository extends JpaRepository<Planet,Long> {
 
     @Query(value = "SELECT * FROM planets WHERE id = ?", nativeQuery = true)
@@ -14,6 +18,6 @@ public interface PlanetRepository extends JpaRepository<Planet,Long> {
 //    int deletePlanetByID(int id);
 
     @Query(value = "INSERT INTO planets (id,name,type) VALUES ( ?1 , ?2 , ?3 )", nativeQuery = true)
-    Planet addPlanet(int id, String name, String type);
+    Map<String,Boolean> addPlanet(int id, String name, String type);
 
 }
